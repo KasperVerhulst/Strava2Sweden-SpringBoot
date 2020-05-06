@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="w=60">
+                <span id="summary" class="my-title">Activity Summary</span>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <td>Sporter:</td>
+                                <td th:text="${activity.sporter}"></td>
+                            </tr>
+                            <tr>
+                                <td>Chiro groep:</td>
+                                <td th:text="${activity.chiroGroup}"></td>
+                            </tr>
+                            <tr>
+                                <td>Afstand:</td>
+                                <td th:text="${activity.distance}"></td>
+                            </tr>
+                            <tr>
+                                <td>Activiteit:</td>
+                                <td th:text="${activity.activityType}"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <a th:href="@{/admin}">Add another activity</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

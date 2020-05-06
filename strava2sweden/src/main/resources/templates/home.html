@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" href="../static/css/home.css">
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css" type="text/css"/>
+        <script th:src="@{webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{webjars/bootstrap/js/bootstrap.min.js}"></script>
+        <base href="/">
+        <title>Scoreboard</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+<body class="d-flex flex-column">
+    <main id="map" role="main" class="flex-shrink-0">
+    <div class="container-fluid">
+        <div> 
+
+            <div id="activities" class="col-4 offset-md-8">
+                <table class="table table-warning">
+                    <thead>
+                        <tr>
+                            <th colspan="2" scope="colgroup">Recent Activities</th>
+                        </tr> 
+                    </thead>
+                        <th:block th:each="athlete : ${athletes}">
+                            <tr>
+                                <td>Sporter:</td>
+                                <td th:text="${athlete.sporter}"></td>
+                            </tr>
+                            <tr>
+                                <td>Chirogroep:</td>
+                                <td th:text="${athlete.chiroGroup}"></td>
+                             </tr>
+                             <tr>
+                                <td>Activiteit:</td>
+                                <td th:text="${athlete.activityType}"></td>
+                             </tr>
+                             <tr>
+                                 <td>Afstand:</td>
+                                <td th:text="${athlete.distance}"></td>
+                             </tr>
+                         </th:block>
+                </table>
+            </div>
+        </div>
+    </div> 
+    </main>
+    <footer class="footer">    
+            <div id="footer-left">
+                <span>Leiding:</span>
+                <span id="distanceCurrentLeaders" th:text="${distanceCurrentLeaders}"></span>
+                <span> / 1482 km</span>
+            </div>
+            <div id="footer-right">
+                <span>Oud-leiding:</span>
+                <span id="distanceExLeaders" th:text="${distanceExLeaders}"></span>
+                <span> / 1482 km</span>
+            </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+<script th:src="@{/js/map.js}"></script> 
+<!-- <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoia2FzcGVydmVyaHVsc3QiLCJhIjoiY2s5cmU1ZnBmMHRsMjNvbjFyaTBmY2V4aiJ9.WdmMCrvixX_QxVjt8IbCPw';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [17.299349, 55.347577],
+    interactive: false,
+    zoom : 4
+    });
+</script> -->
+</html>
