@@ -318,7 +318,7 @@ map.on('load', function () {
         'source': 'locationCurrent',
         'type': 'symbol',
         'layout': {
-            'icon-image': 'bicycle-15',
+            'icon-image': 'airport-15',
             'icon-rotate': ['get', 'bearing'],
             'icon-rotation-alignment': 'map',
             'icon-allow-overlap': true,
