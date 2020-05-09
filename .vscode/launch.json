@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<strava2sweden>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.chirokoka.strava2sweden.DemoApplication",
+            "projectName": "strava2sweden",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RunApplication<strava2sweden>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.chirokoka.strava2sweden.RunApplication",
+            "projectName": "strava2sweden",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-HandlingFormSubmissionApplication<handling-form-submission>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.example.handlingformsubmission.HandlingFormSubmissionApplication",
+            "projectName": "handling-form-submission",
+            "args": ""
+        }
+    ]
+}
